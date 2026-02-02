@@ -1,14 +1,34 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
     const navigate = useNavigate();
+    const [password, setPassword] = useState("");
+
+    const rules = {
+        length: password.length >= 8,
+        uppercase: /[A-Z]/.test(password),
+        lowercase: /[a-z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[^A-Za-z0-9]/.test(password),
+    };
+
+    const isValidPassword = Object.values(rules).every(Boolean);
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Later: login logic
+        if (!isValidPassword) return;
+
+        // Later: API authentication
         navigate("/home");
     };
+
+    const RuleItem = ({ valid, text }) => (
+        <li className={`text-sm ${valid ? "text-green-400" : "text-red-400"}`}>
+            {valid ? "✔" : "✖"} {text}
+        </li>
+    );
 
     return (
         <div className="flex min-h-screen items-center justify-center">
@@ -29,12 +49,28 @@ function Login() {
                         type="password"
                         placeholder="Password"
                         className="w-full p-3 rounded bg-zinc-900 outline-none"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
 
+                    {/* PASSWORD CHECK */}
+                    <ul className="space-y-1 bg-zinc-900 p-3 rounded">
+                        <RuleItem valid={rules.length} text="At least 8 characters" />
+                        <RuleItem valid={rules.uppercase} text="One uppercase letter" />
+                        <RuleItem valid={rules.lowercase} text="One lowercase letter" />
+                        <RuleItem valid={rules.number} text="One number" />
+                        <RuleItem valid={rules.special} text="One special character" />
+                    </ul>
+
                     <button
                         type="submit"
-                        className="w-full bg-indigo-600 hover:bg-indigo-500 py-3 rounded font-bold"
+                        disabled={!isValidPassword}
+                        className={`w-full py-3 rounded font-bold transition
+                            ${isValidPassword
+                                ? "bg-indigo-600 hover:bg-indigo-500"
+                                : "bg-zinc-600 cursor-not-allowed"
+                            }`}
                     >
                         Login
                     </button>
@@ -51,4 +87,4 @@ function Login() {
     );
 }
 
-export default Login
+export default Login;

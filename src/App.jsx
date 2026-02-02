@@ -22,17 +22,20 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 py-6">
         <Routes>
           {/* ENTRY POINT */}
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
 
           {/* AUTH */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* APP */}
+          {/* APP PAGES */}
           <Route path="/home" element={<Home />} />
           <Route path="/games" element={<Games />} />
           <Route path="/add-game" element={<AddGame />} />
           <Route path="/games/:id" element={<GameDetails />} />
+
+          {/* FALLBACK */}
+          <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </main>
     </div>
