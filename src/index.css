@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+/* Swiper arrow styling */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Disable dots completely */
+.swiper-pagination {
+    display: none;
+}

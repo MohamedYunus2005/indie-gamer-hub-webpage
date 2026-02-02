@@ -3,54 +3,90 @@ export const mockGames = [
         id: 1,
         title: "Glitch",
         genre: ["Indie", "Time Travel"],
-        description: "Glitch is an indie adventure game that takes you on a journey through time. Explore different eras, solve puzzles, and uncover the mysteries of the glitching timeline.",
+        description:
+            "Glitch is an indie adventure game that takes you on a journey through time. Explore different eras, solve puzzles, and uncover the mysteries of the glitching timeline.",
         price: "Coming Soon",
         releaseDate: "2026",
         image: "/covers/glitch.jpeg",
+        screenshots: [
+            "/screenshots/glitch-1.png",
+            "/screenshots/glitch-2.png",
+            "/screenshots/glitch-3.png",
+        ],
     },
     {
         id: 2,
         title: "Shadows",
         genre: ["Platformer", "Adventure"],
-        description: "Shadows is a thrilling platformer that plunges you into a world of darkness and light. Navigate through challenging levels, avoid deadly traps, and uncover hidden secrets as you embark on an epic adventure.",
+        description:
+            "Shadows is a thrilling platformer that plunges you into a world of darkness and light. Navigate through challenging levels, avoid deadly traps, and uncover hidden secrets as you embark on an epic adventure.",
         price: "$9.99",
         releaseDate: "2025",
         image: "/covers/shadows.jpeg",
+        screenshots: [
+            "/screenshots/shadows-1.jpeg",
+            "/screenshots/shadows-2.png",
+            "/screenshots/shadows-3.png",
+        ],
     },
     {
         id: 3,
         title: "Spacewar",
         genre: ["Indie", "Adventure"],
-        description: "Spacewar is an indie adventure game set in the vast expanse of space. Pilot your spaceship, explore distant planets, and engage in epic space battles as you uncover the secrets of the universe.",
+        description:
+            "Spacewar is an indie adventure game set in the vast expanse of space. Pilot your spaceship, explore distant planets, and engage in epic space battles as you uncover the secrets of the universe.",
         price: "$10.99",
         releaseDate: "2026",
         image: "/covers/spacewar2.jpeg",
+        screenshots: [
+            "/screenshots/spacewar-1.png",
+            "/screenshots/spacewar-2.png",
+            "/screenshots/spacewar-3.png",
+        ],
     },
     {
         id: 4,
         title: "Pixelvillage",
         genre: ["Pixel", "Exploration"],
-        description: "Pixelvillage is a charming pixel art exploration game where you can build and customize your own village. Interact with quirky characters, complete quests, and create a thriving community in a vibrant pixelated world.",
+        description:
+            "Pixelvillage is a charming pixel art exploration game where you can build and customize your own village. Interact with quirky characters, complete quests, and create a thriving community in a vibrant pixelated world.",
         price: "$6.99",
         releaseDate: "2025",
         image: "/covers/pixelvillage.jpeg",
+        screenshots: [
+            "/screenshots/pixelvillage-1.png",
+            "/screenshots/pixelvillage-2.png",
+            "/screenshots/pixelvillage-3.png",
+        ],
     },
     {
         id: 5,
         title: "Darkwar",
         genre: ["Action", "Horror"],
-        description: "Darkwar is an intense action-horror game that plunges you into a world overrun by terrifying creatures. Fight for survival using an arsenal of weapons, uncover dark secrets, and face your fears in this adrenaline-pumping experience.",
+        description:
+            "Darkwar is an intense action-horror game that plunges you into a world overrun by terrifying creatures. Fight for survival using an arsenal of weapons, uncover dark secrets, and face your fears in this adrenaline-pumping experience.",
         price: "$12.99",
         releaseDate: "2023",
         image: "/covers/darkwar.jpeg",
+        screenshots: [
+            "/screenshots/darkwar-1.png",
+            "/screenshots/darkwar-2.png",
+            "/screenshots/darkwar-3.png",
+        ],
     },
     {
         id: 6,
         title: "Swordfight",
         genre: ["Strategy", "Horror"],
-        description: "Swordfight is a strategic horror game that challenges you to outwit your enemies in a dark and foreboding world. Plan your moves carefully, manage your resources, and survive against all odds in this gripping tactical experience.",
+        description:
+            "Swordfight is a strategic horror game that challenges you to outwit your enemies in a dark and foreboding world. Plan your moves carefully, manage your resources, and survive against all odds in this gripping tactical experience.",
         price: "$8.99",
         releaseDate: "2024",
         image: "/covers/swordfight.jpeg",
+        screenshots: [
+            "/screenshots/swordfight-1.jpeg",
+            "/screenshots/swordfight-2.jpeg",
+            "/screenshots/swordfight-3.jpeg",
+        ],
     },
 ];
