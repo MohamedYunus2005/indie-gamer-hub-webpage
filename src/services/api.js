@@ -9,7 +9,7 @@ export const mockGames = [
         releaseDate: "2026",
         image: "/covers/glitch.jpeg",
         screenshots: [
-            "/screenshots/glitch-1.png",
+            "/screenshots/glitch.png",
             "/screenshots/glitch-2.png",
             "/screenshots/glitch-3.png",
         ],
