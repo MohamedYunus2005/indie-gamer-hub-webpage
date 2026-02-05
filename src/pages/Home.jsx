@@ -9,7 +9,7 @@ export default function Home() {
             {/* HERO SECTION */}
             <section className="text-center space-y-6 py-20">
                 <h1 className="text-5xl font-extrabold">
-                    Discover Hidden Indie Gems 🎮
+                    Discover Hidden Indie Games 🎮
                 </h1>
 
                 <p className="text-zinc-400 max-w-2xl mx-auto">
