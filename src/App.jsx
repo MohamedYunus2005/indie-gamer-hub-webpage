@@ -35,7 +35,7 @@ function App() {
     location.pathname === "/login" || location.pathname === "/register";
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-zinc-100">
+    <div className="min-h-screen bg-deep-bg text-zinc-100">
       {!hideNavbar && <Navbar />}
 
       <main className="max-w-7xl mx-auto px-4 py-6">

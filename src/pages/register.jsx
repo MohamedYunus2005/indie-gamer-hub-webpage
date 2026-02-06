@@ -26,45 +26,52 @@ function Register({ setIsRegistered }) {
     };
 
     const RuleItem = ({ valid, text }) => (
-        <p className={`text-sm ${valid ? "text-green-400" : "text-zinc-400"}`}>
-            {valid ? "✔" : "•"} {text}
+        <p className={`text-sm flex items-center gap-2 ${valid ? "text-neon-cyan drop-shadow-glow-cyan" : "text-zinc-500"}`}>
+            <span>{valid ? "✔" : "○"}</span> {text}
         </p>
     );
 
     return (
-        <div className="flex min-h-screen items-center justify-center">
-            <div className="w-full max-w-md bg-zinc-800 p-8 rounded-xl">
-                <h1 className="text-3xl font-bold mb-6 text-center">Create Account</h1>
+        <div className="flex min-h-screen items-center justify-center relative overflow-hidden">
+            {/* Background Blob */}
+            <div className="absolute w-[500px] h-[500px] bg-neon-cyan/10 blur-[100px] rounded-full -z-10" />
 
-                <form onSubmit={handleRegister} className="space-y-4">
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        className="w-full p-3 rounded bg-zinc-900 outline-none"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+            <div className="w-full max-w-md bg-black/40 backdrop-blur-md border border-white/10 p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                <h1 className="text-4xl font-black mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-cyan drop-shadow-glow">
+                    INITIATE
+                </h1>
 
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        className="w-full p-3 rounded bg-zinc-900 outline-none"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
+                <form onSubmit={handleRegister} className="space-y-6">
+                    <div className="space-y-4">
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            className="w-full p-4 rounded-lg bg-black/60 border border-white/10 focus:border-neon-cyan focus:shadow-[0_0_15px_rgba(0,229,255,0.3)] outline-none text-white transition-all placeholder:text-zinc-600"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
 
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        className="w-full p-3 rounded bg-zinc-900 outline-none"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="w-full p-4 rounded-lg bg-black/60 border border-white/10 focus:border-neon-cyan focus:shadow-[0_0_15px_rgba(0,229,255,0.3)] outline-none text-white transition-all placeholder:text-zinc-600"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
 
-                    <div className="bg-zinc-900 p-3 rounded space-y-1">
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="w-full p-4 rounded-lg bg-black/60 border border-white/10 focus:border-neon-cyan focus:shadow-[0_0_15px_rgba(0,229,255,0.3)] outline-none text-white transition-all placeholder:text-zinc-600"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="bg-black/20 p-4 rounded-lg border border-white/5 space-y-1">
                         <RuleItem valid={rules.length} text="At least 8 characters" />
                         <RuleItem valid={rules.uppercase} text="One uppercase letter" />
                         <RuleItem valid={rules.lowercase} text="One lowercase letter" />
@@ -75,18 +82,18 @@ function Register({ setIsRegistered }) {
                     <button
                         type="submit"
                         disabled={!isValidPassword}
-                        className={`w-full py-3 rounded font-bold transition ${isValidPassword
-                                ? "bg-indigo-600 hover:bg-indigo-500"
-                                : "bg-zinc-600 cursor-not-allowed"
+                        className={`w-full py-4 rounded-lg font-bold tracking-widest uppercase transition-all duration-300 ${isValidPassword
+                            ? "bg-neon-cyan text-black hover:bg-neon-purple hover:text-white hover:shadow-[0_0_20px_rgba(168,85,247,0.6)]"
+                            : "bg-zinc-800 text-zinc-500 cursor-not-allowed border border-white/5"
                             }`}
                     >
-                        Register
+                        Create Account
                     </button>
                 </form>
 
-                <p className="text-center text-zinc-400 mt-4">
+                <p className="text-center text-zinc-500 mt-6 text-sm">
                     Already registered?{" "}
-                    <Link to="/login" className="text-indigo-400 hover:underline">
+                    <Link to="/login" className="text-neon-cyan hover:text-white hover:underline transition-colors">
                         Login here
                     </Link>
                 </p>

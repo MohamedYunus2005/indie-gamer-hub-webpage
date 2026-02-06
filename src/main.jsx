@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/indie-gamer-hub-webpage">
       <App />
     </BrowserRouter>
   </React.StrictMode>
